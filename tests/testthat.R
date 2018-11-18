@@ -1,4 +1,4 @@
 library(testthat)
-library(pRanks)
+library(pScores)
 
-test_check("pRanks")
+test_check("pScores")

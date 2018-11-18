@@ -12,7 +12,7 @@
 #' @examples
 forecastSeasonFbRanks <- function(eta, games_df) {
   dates = (games_df %>% dplyr::distinct(date))$date
-  tidy_boundaries = pRanks::findWeekBoundaries(dates)
+  tidy_boundaries = pScores::findWeekBoundaries(dates)
   forecasts = do.call(rbind, lapply((X = tidy_boundaries$week.id), FUN = forecastWeekFbRanks, games_df, eta))
   return(forecasts)
 }

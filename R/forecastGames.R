@@ -72,7 +72,7 @@ forecastGames <- function(games_df, method = "old", ...){
       return(
         cummWeekLaggedMeans(games_df %>% gatherGames(), pinned_cols = pinned_cols, grouping_cols) %>%
           spreadGames() %>%
-          rename_at(vars( contains("wmeans") ), funs( gsub("wmeans", "pred", .) ) )
+          dplyr::rename_at(dplyr::vars( dplyr::contains("wmeans") ), dplyr::funs( gsub("wmeans", "pred", .) ) )
       )
     }
   }

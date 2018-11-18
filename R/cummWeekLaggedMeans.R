@@ -13,8 +13,7 @@
 #'
 #' @examples
 cummWeekLaggedMeans <- function(data, pinned_cols, grouping_cols){
-  #browser()
-  unpinned_cols <- colnames(data %>% select(-one_of(pinned_cols)))
+  unpinned_cols <- colnames(data %>% dplyr::select(-dplyr::one_of(pinned_cols)))
   lagged <- data %>%
     dplyr::mutate(
       week.number = strftime(date, format = "%V"),
@@ -54,7 +53,7 @@ cummWeekLaggedMeans <- function(data, pinned_cols, grouping_cols){
   # we need to resort to the input dataframe to obtain those
   hot_and_cold_and_reals <- hot_and_cold %>%
     dplyr::left_join(data)
-  return(hot_and_cold_and_reals %>% ungroup())
+  return(hot_and_cold_and_reals %>% dplyr::ungroup())
 }
 
 #' Create a "mirrored" mate for each aggregate, named with a ".pred" preffix. For example, for goals and assits creates

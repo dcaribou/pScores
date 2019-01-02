@@ -1,5 +1,11 @@
-# reverse to gatherGames. spread games goals and assists columns.
-# inspired on: https://stackoverflow.com/questions/43695424/tidyr-spread-multiple-columns
+#' Reverse to gatherGames. spread games goals and assists columns.
+#' Inspired on: https://stackoverflow.com/questions/43695424/tidyr-spread-multiple-columns
+#' @param games_df
+#'
+#' @return
+#' @export
+#'
+#' @examples
 spreadGames <- function(games_df) {
   HOME_AWAY = c("home", "away")
   games_spread <-

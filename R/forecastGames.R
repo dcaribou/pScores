@@ -1,5 +1,4 @@
-# Forecasts for both fbRanks and rolling averages and joins results in one dataframe
-#' Title
+#' Forecasts for both fbRanks and rolling averages and joins results in one dataframe
 #'
 #' @param games_df
 #' @param method
